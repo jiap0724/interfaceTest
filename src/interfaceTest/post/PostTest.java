@@ -31,6 +31,9 @@ public class PostTest {
 		// 获取响应报文 这里注意 要用getentity
 		String result = EntityUtils.toString(response.getEntity());
 		System.out.println(result);
+		// 获取响应头
+		// response.getAllHeaders();
+		System.out.println("响应头：" + response.getAllHeaders());
 		// 打印到测量报告中
 		Reporter.log("请求的URL是：" + post);
 		Reporter.log("响应状态码：" + statusCode);
