@@ -48,7 +48,9 @@ public class FirstTest {
 		// response 转码
 		try {
 			httppost.setEntity(new UrlEncodedFormEntity(formparams1, "UTF-8"));
+			System.out.println("httppost " + httppost);
 			response = httpClient.execute(httppost);
+			System.out.println("response " + response);
 			entity = response.getEntity();
 			// 在这里可以用Jsoup之类的工具对返回结果进行分析，以判断创建是否成功
 			postResult = EntityUtils.toString(entity, "UTF-8");
