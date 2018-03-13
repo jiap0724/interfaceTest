@@ -12,7 +12,7 @@
 <body>
 <h1>Default test</h1>
 <p>
-  Test duration: 0.000s
+  Test duration: 0.691s
 </p>
 
 
@@ -28,21 +28,21 @@
                   loginJDTest
       </td>
   <td class="duration">
-    0.000s
+    0.691s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.testng.TestNGException: <br/>
-Data Provider public java.lang.Object[][] detaDriverTest.FirstTest.login() returned a null value</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.testng.internal.reflect.MethodMatcherException: <br/>
+Data provider mismatch<br/>
+Method: loginJDTest([Parameter{index=0, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=1, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=2, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=3, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=4, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=5, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=6, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=7, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=8, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=9, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=10, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=11, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=12, type=java.lang.String, declaredAnnotations=[]}, Parameter{index=13, type=java.lang.String, declaredAnnotations=[]}])<br/>
+Arguments: [(java.lang.String) https://passport.jd.com/uc/loginService?,(java.lang.String) ac394a05-05c0-4667-9940-2848f0c03809]</b></a><br />
     <div class="stackTrace" id="exception-0">
-              org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:133)<br />
-              org.testng.internal.Parameters.handleParameters(Parameters.java:706)<br />
-              org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)<br />
-              org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)<br />
-              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:914)<br />
+              org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:45)<br />
+              org.testng.internal.Parameters.injectParameters(Parameters.java:796)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:973)<br />
               org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)<br />
               org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)<br />
               org.testng.TestRunner.privateRun(TestRunner.java:648)<br />

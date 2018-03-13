@@ -15,10 +15,14 @@ import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 public class ExcelReader {
 	public static String[][] getExpectationData(String path, String sheetName) {
 		try {
-			File file = new File(path);
+			File file = new File("/Users/jiapeng/Desktop/TestData/LoginTest.xls");
+			System.out.println("111" + file);
 			FileInputStream fis = new FileInputStream(file);
+			System.out.println("222" + fis);
 			POIFSFileSystem POIStream = new POIFSFileSystem(fis);
+			System.out.println("333" + POIStream);
 			HSSFWorkbook workBook = new HSSFWorkbook(POIStream);
+			System.out.println("444" + workBook);
 			// 得到工作表
 			HSSFSheet sheet1 = workBook.getSheet(sheetName);
 			// 得到总行数

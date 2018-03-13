@@ -1,5 +1,10 @@
 package detaDriverTest;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +19,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 
 public class FirstTest {
 	private HttpClient httpClient = new DefaultHttpClient();
@@ -114,13 +120,39 @@ public class FirstTest {
 	}
 
 	@DataProvider(name = "LoginData")
-	public Object[][] login() {
+	public Object[][] login() throws Exception {
 		// 测试数据准备
-		// String file = "." + File.separator + "TestData" + File.separator +
-		// "/Users/jiapeng/Desktop/TestData/LoginTest.xls";
-		String file = "/Users/jiapeng/Desktop/TestData/LoginTest.xlsx";
+		String file = "/Users/jiapeng/DeskTop/TestData/LoginTest.xls";
 		Object[][] records;
 		records = ExcelReader.getExpectationData(file, "login");
+		records = ExcelUtils.getTableArray(file, "login");
 		return records;
 	}
+
+	public static void main(String[] args) {
+
+		String files = "/Users/jiapeng/DeskTop/TestData/LoginTest.xls";
+		File file = new File(files);
+		String mm = readFile(file);
+		System.out.println(mm);
+
+	}
+
+	public static String readFile(File file) {  
+        StringBuilder result =new StringBuilder();  
+        try {  
+			BufferedReader br = new BufferedReader(new FileReader(file));
+            String s =null;  
+            while((s =br.readLine()) != null) { //一次读一行内容  
+				System.out.println(s);
+                result.append(System.lineSeparator() +s);  
+            }  
+            br.close();  
+		} catch (FileNotFoundException e) {
+          e.printStackTrace();  
+		} catch (IOException e) {
+          e.printStackTrace();  
+        }     
+        return result.toString();  
+    }
 }
