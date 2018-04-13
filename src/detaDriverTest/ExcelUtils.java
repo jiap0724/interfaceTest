@@ -28,7 +28,7 @@ public class ExcelUtils {
 			int totalRows = ExcelWSheet.getLastRowNum();
 			System.out.println(totalRows);
 			// you can write a function as well to get Column count
-			int totalCols = 2;
+			int totalCols = 13;
 			System.out.println(totalCols);
 			tabArray = new String[totalRows][totalCols];
 			ci = 0;
